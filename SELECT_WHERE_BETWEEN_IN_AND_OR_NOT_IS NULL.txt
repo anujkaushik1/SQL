@@ -1,0 +1,21 @@
+SELECT 40 + 200;
+
+SELECT lcase('ANUJ KAUSHIK');
+
+SELECT now();
+
+SELECT * FROM Worker;
+
+SELECT * FROM Worker WHERE Salary > 10000;
+
+SELECT * FROM Worker WHERE Department = 'HR';
+
+SELECT * FROM Worker WHERE Salary BETWEEN 10000 AND 30000;
+
+SELECT * FROM Worker WHERE Department = 'HR' OR Department = 'Admin' OR Department = 'Account';
+
+SELECT * FROM Worker WHERE DEPARTMENT IN('HR', 'Admin');
+ 
+SELECT * FROM Worker WHERE DEPARTMENT NOT IN('HR', 'Admin');
+
+SELECT * FROM Worker WHERE Department IS NULL;
