@@ -1,0 +1,19 @@
+CREATE TABLE Account(
+	id INT PRIMARY KEY,
+    name VARCHAR(255) UNIQUE,
+    balance INT NOT NULL DEFAULT 0
+);
+
+SELECT * FROM Account;
+
+ALTER TABLE Account ADD interest FLOAT NOT NULL DEFAULT 0;
+
+ALTER TABLE Account MODIFY interest DOUBLE NOT NULL DEFAULT 0;
+
+DESC Account;
+
+ALTER TABLE Account CHANGE COLUMN interest saving_interest FLOAT NOT NULL DEFAULT 0;
+
+ALTER TABLE Account DROP COLUMN saving_interest;
+
+ALTER TABLE Account RENAME TO Account_Details;
