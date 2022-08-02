@@ -1,0 +1,57 @@
+CREATE DATABASE temp;
+
+USE temp;
+
+CREATE TABLE Customer(
+	id INT PRIMARY KEY,
+    name VARCHAR(225),
+    age INT(3),
+    city VARCHAR(225),
+    Pincode INT(10)
+);
+
+INSERT INTO Customer
+	VALUES
+    (001, 'Anuj', 10, 'Gurugram', '122015'),
+    (002, 'Anuj1', 11, 'Delhi', '122018'),
+    (003, 'Anu2', 9, 'Jaipur', '122115'),
+    (004, 'Anuj3', 2, 'Gurugram', '22015');
+    
+SELECT * FROM Customer;
+
+CREATE TABLE Order_Details(
+	order_id INT PRIMARY KEY,
+    delivery_date DATE,
+    cust_id INT,
+    FOREIGN KEY(cust_id) REFERENCES Customer(id)
+);
+
+SHOW TABLES;
+
+SELECT * FROM Order_Details;
+
+CREATE TABLE ACCOUNT(
+	id INT PRIMARY KEY,
+    name VARCHAR(255) UNIQUE,
+    balance INT,
+    CONSTRAINT acc_bal_chk CHECK(balance > 1000)
+);
+
+INSERT INTO Account
+	VALUES(1, 'Anuj', 10000);	
+
+SELECT * FROM Account;
+
+INSERT INTO Account
+	VALUES(2, 'Kaushk', 1000);	
+    
+DROP TABLE Account;
+	 
+CREATE TABLE ACCOUNT1(
+	id INT PRIMARY KEY,
+    name VARCHAR(255) UNIQUE,
+    balance INT NOT NULL DEFAULT 0
+);
+SHOW TABLES;
+INSERT INTO Account1(id, name)
+	VALUES(2, 'Kaushkkk');
