@@ -1,0 +1,33 @@
+-- Inner Join
+-- Enlist all employees id's, name along with the project allocated 
+-- to them
+
+SELECT e.id, e.fname, e.lname, p.id, p.name FROM Employee AS e
+INNER JOIN Project AS p 
+ON e.id = p.empid;
+
+-- Fetch out all employee id and their contact details who 
+-- have been working from jaipur with the clients name 
+-- working in hyderabad
+SELECT e.id, e.emailid, e.phoneno, c.phone, c.fname, c.lastname FROM Employee AS e
+INNER JOIN Client AS c
+ON e.id = c.empid WHERE e.city = 'Jaipur' AND c.city = 'Hyderabad';
+
+-- Left Join
+-- Fetch out each project allocated to each employee
+SELECT * FROM Employee AS e
+LEFT JOIN Project AS p
+ON e.id = p.empid;
+
+-- Right Join
+-- List out all project along with the employee name and their
+-- respective allocated email id
+SELECT p.id, p.name, e.fname, e.lname, e.emailid FROM Employee AS e
+INNER JOIN Project AS p 
+ON e.id = p.empid;
+
+-- Cross Join
+-- List out all the combinations possible for the employee's name
+-- and projects that can exist
+SELECT e.name, e.lname, p.id, p.name FROM Employee AS e
+CROSS JOIN Project AS p;
